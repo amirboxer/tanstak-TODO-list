@@ -60,6 +60,4 @@ const PRIORITY_COLOR_MAP = {
     'Medium':'#ffe343',
     'Low': '#c0ff43',
     'Lowest': '#43ff75',
-
-
 }

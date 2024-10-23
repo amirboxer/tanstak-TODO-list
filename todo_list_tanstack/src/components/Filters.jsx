@@ -49,7 +49,6 @@ function Filters({ filterId, columnFilters, setColumnFilters }) {
                     size='sm'
                     leftIcon={<Icon as={FilterIcon} />}
                 >
-                    Filter
                 </Button>
             </PopoverTrigger>
             <PopoverContent>

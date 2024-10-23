@@ -2,7 +2,6 @@
 import {
     Drawer,
     DrawerBody,
-    DrawerFooter,
     DrawerHeader,
     DrawerOverlay,
     DrawerContent,
@@ -45,7 +44,7 @@ function AddTask({table}) {
 
     return (
         <>
-            <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+            <Button ref={btnRef} colorScheme='teal' onClick={onOpen} mb={10} mt={10}>
                 New
             </Button>
             <Drawer

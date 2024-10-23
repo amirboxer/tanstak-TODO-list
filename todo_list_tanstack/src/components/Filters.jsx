@@ -8,7 +8,7 @@ import {
     PopoverContent,
     PopoverBody,
     PopoverCloseButton,
-    Button,
+    Box,
     Icon,
     Text,
     Stack,
@@ -17,7 +17,7 @@ import {
 
 import FilterIcon from './icons/FilterIcon'
 
-function Filters({ filterId, columnFilters, setColumnFilters }) {
+function Filters({ filterId, columnFilters, setColumnFilters, table }) {
 
     const selectedFilters = columnFilters[filterId];
 
@@ -34,7 +34,7 @@ function Filters({ filterId, columnFilters, setColumnFilters }) {
             else {
                 currFilters = currFilters.filter(filter => filter !== e.target.value);
             }
-            
+
             return prev.map(filter => filter.id !== filterId ? filter : { id: filterId, value: currFilters })
         })
     }
@@ -45,11 +45,16 @@ function Filters({ filterId, columnFilters, setColumnFilters }) {
             isLazy
         >
             <PopoverTrigger>
-                <Button
-                    size='sm'
-                    leftIcon={<Icon as={FilterIcon} />}
+                <Box
+                    display={'inline'}
                 >
-                </Button>
+                    <Icon
+                        cursor={'pointer'}
+                        as={FilterIcon}
+                        mx={3}
+                        fontSize={14}
+                    />
+                </Box>
             </PopoverTrigger>
             <PopoverContent>
                 <PopoverCloseButton />
@@ -66,7 +71,7 @@ function Filters({ filterId, columnFilters, setColumnFilters }) {
                     </Text>
 
                     <Stack>
-                        {Object.keys(PRIORITY_COLOR_MAP).map(filterValue =>
+                        {getCheckboxes(filterId, table).map(filterValue =>
                             <Checkbox
                                 key={filterValue}
                                 value={filterValue}
@@ -86,6 +91,11 @@ function Filters({ filterId, columnFilters, setColumnFilters }) {
 export default Filters
 
 
-function foo() {
-    return
+function getCheckboxes(filterId, table) {
+    return filterId === 'priority' ? Object.keys(PRIORITY_COLOR_MAP) : extractAssignees(table);
+}
+
+
+function extractAssignees(table) {
+    return [...new Set(table.map(row => row.assignee))];
 }

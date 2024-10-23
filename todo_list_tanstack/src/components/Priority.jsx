@@ -22,6 +22,7 @@ function Piority({ getValue: getInitialValue, row, column, table }) {
 
     return (
         <Menu
+            className='drak-font'
             isLazy
         >
             <MenuButton
@@ -30,7 +31,7 @@ function Piority({ getValue: getInitialValue, row, column, table }) {
                 h="100%"
                 w="100%"
                 p={1}
-                color={"gray.900"}
+
                 bg={PRIORITY_COLOR_MAP[getInitialValue()]}
             >
                 {getInitialValue()}
@@ -46,7 +47,6 @@ function Piority({ getValue: getInitialValue, row, column, table }) {
                         onClick={() => updatePriorityLevel(level)}
                     >
                         <TimeIcon
-                            color={PRIORITY_COLOR_MAP[level]}
                             mr={4}
                         />
                         {level}

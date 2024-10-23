@@ -45,6 +45,7 @@ const columns = [
         accessorKey: 'assignee',
         header: 'Assignee',
         cell: EditableTask,
+        filterFn: (row, columnId, filterAssignee) => !filterAssignee.length ? true : filterAssignee.includes(row.getValue(columnId)),
     },
     {
         //  priority column editble as a dropDown
@@ -105,16 +106,15 @@ function TaskTable() {
             ),
 
             // delete a row
-            deleteRow: rowIdx => setData(prev => prev.filter((row, i) => i !== rowIdx)),
+            deleteRow: rowIdx => {
+                setData(prev => prev.filter((row, i) => i !== rowIdx));
+                setColumnFilters([{ id: 'priority', value: [] }, { id: 'assignee', value: [] }])
+            },
 
             // add new task
             addTask: (task, assignee, priority) => setData(prev => [{ task, priority, assignee, delete: 'delete', edit: 'edit' }, ...prev]),
         }
     });
-
-
-    console.log(data);
-
 
     return (
         <>
@@ -159,9 +159,11 @@ function TaskTable() {
                                                 filterId={header.id}
                                                 columnFilters={columnFilters}
                                                 setColumnFilters={setColumnFilters}
+                                                table={data}
                                             />
 
                                             <Icon
+                                                cursor={'pointer'}
                                                 as={SortIcon}
                                                 mx={3}
                                                 fontSize={14}

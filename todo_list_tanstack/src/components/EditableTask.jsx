@@ -9,8 +9,10 @@ function EditableTask({ getValue: getInitialValue, row, column, table }) {
 
     return (
         <Input
+            className='drak-font'
             value={getInitialValue()}
             variant={"filled"}
+            background={'gray.200'}
             size="sm"
             w="85%"
             overflow="hidden"

@@ -1,24 +1,38 @@
-.task-table{
-  background-color: red;
+body,
+html {
+  background-color: #181924 !important;
 }
 
-.thead{
-  background-color: green;
-  padding: 10px;
+* {
+  /* color: #ced1d3; */
 }
 
-.th {
+
+.task-table {
+  border: 1px solid #424242;
+}
+
+
+.th, h1 {
   position: relative;
-  background-color: #ff9143;
+  color: #ced1d3;
 }
 
-.tr{
-  background-color: orange;
+.tr {
+  border: 1px solid #424242;
   padding: 10px;
 }
 
-.td{
+.td {
   background-color: aliceblue;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.drak-font{
+  color: #181924;
 }
 
 .resizer {
@@ -26,8 +40,9 @@
   top: 0;
   right: 0;
   height: 100%;
-  width: 5px;
-  background: rgba(0, 0, 0, 0.5);
+  width: 10px;
+  border-radius: 4px;
+  background: rgba(122, 122, 122, 0.5);
   cursor: col-resize;
   user-select: none;
   touch-action: none;
@@ -36,7 +51,7 @@
 
 
 .resizer.isResizing {
-  background: blue;
+  background: rgb(255, 0, 191);
   opacity: 1;
 }
 
@@ -45,7 +60,7 @@
     opacity: 0;
   }
 
-  *:hover > .resizer {
+  *:hover>.resizer {
     opacity: 1;
   }
 }
@@ -78,9 +93,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -89,6 +106,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

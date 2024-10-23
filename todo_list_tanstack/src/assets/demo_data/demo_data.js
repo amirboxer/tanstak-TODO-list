@@ -2,53 +2,54 @@ export {DATA, PRIORITY_COLOR_MAP}
 
 const DATA = [
     {
-        task: 'Write letter',
+        task: 'Write Down ',
         assignee: 'Mr Bin',
         priority: 'Medium',
-        edit: 'edit',
         delete: 'delete',
     },
     {
-        task: 'Write letter',
-        assignee: 'Mr Bond',
-        priority: 'Critical',
-        edit: 'edit',
-        delete: 'delete',
-    },
-    {
-        task: 'Write letter',
-        assignee: 'Mr Biiin',
+        task: 'Buy new headphones',
+        assignee: 'Mr james',
         priority: 'High',
-        edit: 'edit',
+        delete: 'delete',
+    },
+    {
+        task: 'Write letter',
+        assignee: 'molly',
+        priority: 'High',
         delete: 'delete',
     },
 
     {
-        task: 'Write letter',
-        assignee: 'Mr Berlin',
+        task: 'clean up mess',
+        assignee: 'Mr shenanigans',
         priority: 'Low',
-        edit: 'edit',
         delete: 'delete',
     },
     {
         task: 'Write letter',
-        assignee: 'Mr Be1in',
+        assignee: 'Abraham',
         priority: 'Lowest',
-        edit: 'edit',
         delete: 'delete',
     },
     {
-        task: 'Write letter',
-        assignee: 'Mr Bi2n',
+        task: 'Finish brick wall',
+        assignee: 'jacob',
         priority: 'Lowest',
-        edit: 'edit',
         delete: 'delete',
     },
+
     {
-        task: 'Write letter',
-        assignee: 'Mr Bin1',
-        priority: 'High',
-        edit: 'edit',
+        task: 'assassinate sinwar',
+        assignee: 'IDF',
+        priority: 'Critical',
+        delete: 'delete',
+    },
+
+    {
+        task: 'call MOM',
+        assignee: 'jacob',
+        priority: 'Critical',
         delete: 'delete',
     },
 ]

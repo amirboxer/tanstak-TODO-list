@@ -72,11 +72,6 @@ const columns = [
         }
     },
     {
-        accessorKey: 'edit',
-        header: 'Edit',
-        cell: props => <div>{props.getValue()}</div>,
-    },
-    {
         accessorKey: 'delete',
         header: 'Delete',
         cell: DeleteTask,
@@ -112,7 +107,7 @@ function TaskTable() {
             },
 
             // add new task
-            addTask: (task, assignee, priority) => setData(prev => [{ task, priority, assignee, delete: 'delete', edit: 'edit' }, ...prev]),
+            addTask: (task, assignee, priority) => setData(prev => [{ task, priority, assignee, delete: 'delete'}, ...prev]),
         }
     });
 

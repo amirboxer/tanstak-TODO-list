@@ -63,6 +63,7 @@ function Filters({ filterId, columnFilters, setColumnFilters, table }) {
                     overflowY={'auto'}
                 >
                     <Text
+                        color={'black'}
                         fontSize="md"
                         fontWeight="bold"
                         mb={4}
@@ -73,6 +74,7 @@ function Filters({ filterId, columnFilters, setColumnFilters, table }) {
                     <Stack>
                         {getCheckboxes(filterId, table).map(filterValue =>
                             <Checkbox
+                                color={'black'}
                                 key={filterValue}
                                 value={filterValue}
                                 isChecked={columnFilters.find(filter => filter.id === filterId).value.includes(filterValue)}
